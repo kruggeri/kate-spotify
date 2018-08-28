@@ -1,5 +1,16 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-{{welcome-page}}
-{{!-- Feel free to remove this! --}}
+<div class="main-container">
+  <div class="main-side-bar flex flex-wrap w-48">
 
-{{outlet}}
+    <nav class="side-bar-list">
+      <div class="side-bar-list-inner">
+        <div class="side-bar-header grey-white"white>Kate's Spotify</div>
+        <p class="h-10 side-link">{{#link-to "home"}}Home{{/link-to}}</p>
+        <p class="h-10 side-link">{{#link-to "collection"}}Your Library{{/link-to}}</p>
+      </div>
+    </nav>
+  </div>
+
+  <div class="content-container">
+    {{outlet}}
+  </div>
+</div>
