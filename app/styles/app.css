@@ -93,6 +93,7 @@ ul {
   padding: 24px;
   font-size: 16px;
   color: rgba(255, 255, 255, 0.6);
+  height: 2070px;
 }
 
 .side-bar-list, .side-bar-list-inner > a {
@@ -118,10 +119,11 @@ ul {
 }
 
 .content-container {
-  background-color: rgb(18,18,18);
+  background-image: linear-gradient(rgb(57, 80, 96), rgb(6, 8, 10) 100%);
   width: 100%;
   color: rgba(255, 255, 255, .6);
   font-size: 12px;
+  height: 2070px;
 }
 
 .collections-container > div > a {
@@ -133,10 +135,131 @@ ul {
 }
 
 .home-container {
-  background-image: linear-gradient(rgb(57, 80, 96), rgb(6, 8, 10) 85%);
-  height: 100%
+
 }
 
 .playlist-button {
   background-color: #1db954;
+}
+
+.home-header-text {
+  text-align: center;
+  color: white;
+  font-size: 36px;
+  font-weight: 600;
+  letter-spacing: -.005em;
+  line-height: 44px;
+  text-transform: none;
+  margin: auto;
+  padding: 100px;
+}
+
+.recently-played-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.recently-played-track {
+  text-align: center;
+  padding: 50px;
+}
+
+.recently-played-track-name {
+  color: white;
+  font-weight: 400;
+  font-size: 14px;
+  padding-bottom: 10px;
+}
+
+.cover-art {
+  width: 200px;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.cover-art img:hover {
+  -webkit-filter: brightness(30%);
+}
+
+.home-container {
+  height: 2000px;
+}
+
+.album-link-wrapper {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.album-cover-art {
+  max-width: 300px;
+}
+
+.album-container {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  height: 2000px;
+}
+
+.album-info-container {
+  margin-top: 20px;
+}
+
+.album-info-inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 50px;
+}
+
+.album-title {
+  display: flex;
+  justify-content: center;
+  max-width: 300px;
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -.005em;
+  line-height: 44px;
+  text-transform: none;
+}
+
+.album-info {
+  max-width: 300px;
+}
+
+.album-artist {
+  text-align: center;
+}
+
+.album-info-clump {
+  display: flex;
+  justify-content: center;
+}
+
+.album-button {
+  display: flex;
+  justify-content: center;
+  min-width: 130px;
+  padding: 20px;
+  border: 0;
+  border-radius: 500px;
+  color: white;
+  font-size: 11px;
+  display: inline-block;
+  font-size: 11;
+  font-weight: 200px;
+  letter-spacing: .16em;
+  line-height: 1.6px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.album-button-container {
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
 }

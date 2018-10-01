@@ -1,4 +1,28 @@
 <div class="home-container">
-  <h2>This is the homepage</h2>
+  <div class="home-header-text">
+    Recently Played
+  </div>
+  <div class="home-content">
+    <div class="recently-played-grid">
+      {{#each model as |recentlyPlayedTrack|}}
+        <div class="recently-played-track">
+            {{#link-to "album" 1 class="album-link-wrapper"}}
+              <div class="cover-art">
+                <img src={{recentlyPlayedTrack.track.album.images.1.url}}>
+              </div>
+
+              <div class="recently-played-track-name">
+                {{recentlyPlayedTrack.track.name}}
+              </div>
+              <div class="artist-name">
+                {{recentlyPlayedTrack.track.album.artists.0.name}}
+              </div>
+          {{/link-to}}
+        </div>
+      {{/each}}
+
+    </div>
+  </div>
+
 </div>
-{{outlet}}
+
