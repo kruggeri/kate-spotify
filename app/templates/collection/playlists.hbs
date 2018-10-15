@@ -1,3 +1,17 @@
-<h3>Here are the playlists</h3>
+<div class="home-container">
+  <div class="home-header-text">
+    Playlists
+  </div>
+  <div class="home-content">
+    <div class="recently-played-grid">
+      {{#each model as |playlist|}}
+        <div>
+          TEST
+          {{playlist.name}}
+        </div>
+      {{/each}}
 
-{{outlet}}
+    </div>
+  </div>
+
+</div>

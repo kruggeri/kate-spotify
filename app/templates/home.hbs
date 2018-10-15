@@ -6,7 +6,7 @@
     <div class="recently-played-grid">
       {{#each model as |recentlyPlayedTrack|}}
         <div class="recently-played-track">
-            {{#link-to "album" 1 class="album-link-wrapper"}}
+            {{#link-to "album" 2 class="album-link-wrapper"}}
               <div class="cover-art">
                 <img src={{recentlyPlayedTrack.track.album.images.1.url}}>
               </div>
