@@ -9,14 +9,23 @@ export default Route.extend({
         Authorization: `Bearer ${ENV.AUTH_KEY}`
       }
     };
-    return fetch(
+
+    const payload = fetch(
       'https://api.spotify.com/v1/browse/new-releases',
       headers
-    ).then(function(response) {
-      const data = response.json();
-      console.log(data);
-      return data;
-    });
+    )
+      .then(function(response) {
+        const data = response.json();
+        return data;
+      })
+      .then(data => {
+        const { albums } = data;
+        const serializedData = { albums: albums.items };
+        this.get('store').pushPayload(serializedData);
+        return serializedData;
+      });
+
+    return payload;
     // return [
     // {
     //   track: {

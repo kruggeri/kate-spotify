@@ -1,28 +1,18 @@
 <div class="home-container">
   <div class="home-header-text">
-    Recently Played
+    New Releases
   </div>
   <div class="home-content">
     <div class="recently-played-grid">
-      {{#each model as |recentlyPlayedTrack|}}
+      {{#each model.albums as |album|}}
         <div class="recently-played-track">
-            {{#link-to "album" 2 class="album-link-wrapper"}}
-              <div class="cover-art">
-                <img src={{recentlyPlayedTrack.track.album.images.1.url}}>
-              </div>
-
-              <div class="recently-played-track-name">
-                {{recentlyPlayedTrack.track.name}}
-              </div>
-              <div class="artist-name">
-                {{recentlyPlayedTrack.track.album.artists.0.name}}
-              </div>
-          {{/link-to}}
+          <div class="artist-name">
+            {{album.name}}
+          </div>
         </div>
       {{/each}}
 
     </div>
   </div>
-
 </div>
 
