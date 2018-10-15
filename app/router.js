@@ -25,9 +25,6 @@ Router.map(function() {
   this.route('podcast', { path: '/podcast/:id' });
 
   this.route('not-found', { path: '/*path' });
-
-  // I don't think I need a song route
-  // this.route('song', { path: '/song/:id' });
 });
 
 export default Router;
