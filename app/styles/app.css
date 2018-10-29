@@ -96,12 +96,46 @@ ul {
   height: 2070px;
 }
 
+.side-bar-header {
+  margin-bottom: 20px;
+}
+
 .side-bar-list, .side-bar-list-inner > a {
   background-image: none;
 }
 
 .side-link > a {
   color: rgba(255, 255, 255, 0.6);
+}
+
+.home-dot {
+  height: 20px;
+  width: 20px;
+  background-color: magenta;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.home-dot:hover {
+  cursor: pointer;
+  background-color: #3399ff;
+}
+
+.library-dot {
+  height: 20px;
+  width: 20px;
+  background-color: #ff1a1a;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.library-dot:hover {
+  cursor: pointer;
+  background-color: #3399ff;
+}
+
+.home-dot-container {
+  margin-right: 10px;
 }
 
 .side-link > a:hover {
@@ -143,7 +177,6 @@ ul {
 }
 
 .home-header-text {
-  text-align: center;
   color: white;
   font-size: 36px;
   font-weight: 600;
@@ -151,7 +184,7 @@ ul {
   line-height: 44px;
   text-transform: none;
   margin: auto;
-  padding: 100px;
+  margin: 20px;
 }
 
 .recently-played-grid {
@@ -189,7 +222,10 @@ ul {
 .album-link-wrapper {
   display: flex;
   flex-direction: column;
+  max-width: 200px;
   cursor: pointer;
+  margin: 20px;
+  text-align: center;
 }
 
 .album-cover-art {

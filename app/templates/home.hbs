@@ -4,14 +4,26 @@
   </div>
   <div class="home-content">
     <div class="recently-played-grid">
-      {{#each model.albums as |album|}}
-        <div class="recently-played-track">
-          <div class="artist-name">
-            {{album.name}}
-          </div>
+      {{#each model.content as |album|}}
+        <div>
+          {{!-- {{#link to "album" album.__data.id}} --}}
+            <div class="album-link-wrapper">
+              {{log album}}
+              <div class="cover-art">
+                <img src={{album.__data.images.1.url}}>
+              </div>
+              <div class="recently-played-track-name">
+                <div class="song-name">
+                  {{album.__data.name}}
+                </div>
+                <div class="artist-name">
+                  {{album.__data.artists.0.name}}
+                </div>
+              </div>
+            </div>
+          {{!-- {{/link}} --}}
         </div>
       {{/each}}
-
     </div>
   </div>
 </div>

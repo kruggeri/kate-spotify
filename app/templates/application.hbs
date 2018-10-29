@@ -4,8 +4,26 @@
     <nav class="side-bar-list">
       <div class="side-bar-list-inner">
         <div class="side-bar-header grey-white"white>Kate's Spotify</div>
-        <p class="h-10 side-link">{{#link-to "home"}}Home{{/link-to}}</p>
-        <p class="h-10 side-link">{{#link-to "collection"}}Your Library{{/link-to}}</p>
+        <p class="h-10 side-link">
+          {{#link-to "home"}}
+            <div class="home-dot-container">
+              <span class="home-dot"></span>
+            </div>
+            <div>
+              Home
+            </div>
+          {{/link-to}}
+        </p>
+        <p class="h-10 side-link">
+          {{#link-to "collection"}}
+            <div class="home-dot-container">
+              <span class="library-dot"></span>
+            </div>
+            <div>
+              Your Library
+            </div>
+          {{/link-to}}
+        </p>
       </div>
     </nav>
   </div>
