@@ -1,25 +1,30 @@
-{{#each model as |album|}}
   <div class="flex mb-4 album-container">
     <div class="w-1/3 album-info-container">
       <div class="album-info-inner">
         <div class="album-cover-art">
-          <img src={{album.images.0.url}}>
+          <img src={{model.images.0.url}}>
         </div>
 
         <div class="album-info">
           <div class="album-title">
-            {{album.name}}
+            {{model.name}}
           </div>
           <div class="album-artist">
-            {{album.artists.0.name}}
+            {{model.artists.0.name}}
           </div>
 
           <div class="album-info-clump">
-            <div class="album-year">
-              {{album.release_date}}
-            </div>
+            {{!-- <div class="album-year">
+              // TODO: get release date in here
+              {{model.releaseDate}}
+            </div> --}}
             <div class="album-total-tracks">
-              &nbsp; {{album.total_tracks}} SONGS
+              &nbsp; {{model.tracks.items.length}}
+              {{#if (eq model.tracks.items.length 1)}}
+                SONG
+              {{else}}
+                SONGS
+              {{/if}}
             </div>
           </div>
           <div class="album-button-container">
@@ -30,14 +35,15 @@
       </div>
     </div>
     <div class="w-2/3 songs-list">
-      {{#each album.items as |track|}}
-        <div class="track-name">
-          {{track.name}}
-        </div>
-        <div class="track-duration">
-          {{track.duration_ms}}
+      {{#each model.tracks.items as |track|}}
+        <div class="track-info">
+          <div class="track-name">
+            {{track.name}}
+          </div>
+          <div class="track-duration">
+            {{track.duration_ms}}
+          </div>
         </div>
       {{/each}}
     </div>
   </div>
-{{/each}}

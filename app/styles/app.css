@@ -299,3 +299,25 @@ ul {
   justify-content: center;
   padding-top: 20px;
 }
+
+.songs-list {
+  margin-top: 50px;
+  margin-right: 50px;
+  display: flex;
+  flex-direction: column;
+}
+
+.track-info {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
+}
+
+.track-name {
+  font-size: 14px;
+}
+
+.track-duration {
+  font-size: 14px;
+}
+

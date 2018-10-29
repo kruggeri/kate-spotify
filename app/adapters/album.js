@@ -8,4 +8,9 @@ export default ApplicationAdapter.extend({
   headers: {
     Authorization: `Bearer ${ENV.AUTH_KEY}`
   }
+
+  // urlForFindRecord(id, modelName, snapshot) {
+  //   console.log(id);
+  //   return `https://api.spotify.com/v1/albums/${id}`;
+  // }
 });
