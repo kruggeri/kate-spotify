@@ -1,31 +1,8 @@
 import Route from '@ember/routing/route';
-import fetch from 'fetch';
-import ENV from 'kate-spotify/config/environment';
 
 export default Route.extend({
   model() {
-    const headers = {
-      headers: {
-        Authorization: `Bearer ${ENV.AUTH_KEY}`
-      }
-    };
-
-    const payload = fetch(
-      'https://api.spotify.com/v1/browse/new-releases',
-      headers
-    )
-      .then(function(response) {
-        const data = response.json();
-        return data;
-      })
-      .then(data => {
-        const { albums } = data;
-        const serializedData = { albums: albums.items };
-        this.get('store').pushPayload(serializedData);
-        return serializedData;
-      });
-
-    return payload;
+    return this.store.findAll('album');
     // return [
     // {
     //   track: {
