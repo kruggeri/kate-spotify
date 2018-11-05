@@ -1,9 +1,9 @@
 import Model from 'ember-data/model';
-import DS from 'ember-data';
+import attr from 'ember-data/attr';
 
 export default Model.extend({
-  name: DS.attr(),
-  artists: DS.attr(),
-  images: DS.attr(),
-  tracks: DS.attr()
+  name: attr(),
+  artists: attr(),
+  images: attr(),
+  tracks: attr()
 });

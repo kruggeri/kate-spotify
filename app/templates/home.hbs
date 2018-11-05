@@ -7,7 +7,6 @@
       {{#each model as |album|}}
         <div>
           {{#link-to "album" album.id}}
-          {{!-- <a href="/album/1"> --}}
             <div class="album-link-wrapper">
               <div class="cover-art">
                 <img src={{album.images.1.url}}>
@@ -21,7 +20,6 @@
                 </div>
               </div>
             </div>
-          {{!-- </a> --}}
           {{/link-to}}
         </div>
       {{/each}}

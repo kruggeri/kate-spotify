@@ -20,11 +20,7 @@
             </div> --}}
             <div class="album-total-tracks">
               &nbsp; {{model.tracks.items.length}}
-              {{#if (eq model.tracks.items.length 1)}}
-                SONG
-              {{else}}
-                SONGS
-              {{/if}}
+              {{if (eq model.tracks.items.length 1) "SONG" "SONGS"}}
             </div>
           </div>
           <div class="album-button-container">
