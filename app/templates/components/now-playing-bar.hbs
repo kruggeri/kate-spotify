@@ -1,0 +1,19 @@
+<div>
+  <button {{action "togglePlay"}} class="media-player-play">
+    {{#if shouldPlay}}
+      Pause!
+    {{else}}
+      Play!
+    {{/if}}
+  </button>
+  <div class="song-duration">
+    Song Duration:
+    {{#if songDuration}}
+      {{songDuration}}
+    {{else}}
+      00:00
+    {{/if}}
+  </div>
+  {{media-player shouldPlay=shouldPlay songDuration=songDuration}}
+</div>
+

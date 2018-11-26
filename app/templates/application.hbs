@@ -3,7 +3,7 @@
 
     <nav class="side-bar-list">
       <div class="side-bar-list-inner">
-        <div class="side-bar-header grey-white"white>Kate's Spotify</div>
+        <div class="side-bar-header grey-white">Kate's Spotify</div>
         <p class="h-10 side-link">
           {{#link-to "home"}}
             <div class="home-dot-container">
@@ -41,7 +41,9 @@
       <button class="playlist-button hover:bg-blue-dark text-white font-bold py-2 px-4 rounded-full">
         New Playlist
       </button>
-
+      <div>
+        {{now-playing-bar}}
+      </div>
     </div>
     {{outlet}}
   </div>

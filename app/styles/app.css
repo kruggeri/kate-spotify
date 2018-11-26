@@ -228,6 +228,10 @@ ul {
   text-align: center;
 }
 
+.album-link-wrapper:hover {
+  cursor: pointer;
+}
+
 .album-cover-art {
   max-width: 300px;
 }
@@ -321,3 +325,8 @@ ul {
   font-size: 14px;
 }
 
+.media-player-play {
+  color: magenta;
+  font-size: 20px;
+  margin: 20px;
+}
