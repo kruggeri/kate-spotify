@@ -6,14 +6,26 @@
       Play!
     {{/if}}
   </button>
-  <div class="song-duration">
+
+  {{!-- duration will come from the Spotify API --}}
+  {{!-- <div class="song-duration">
     Song Duration:
     {{#if songDuration}}
       {{songDuration}}
     {{else}}
       00:00
     {{/if}}
+  </div> --}}
+
+  <div class="current-time">
+    Current Time:
+    {{#if formattedCurrentTime}}
+      {{formattedCurrentTime}}
+    {{else}}
+      0:00
+    {{/if}}
   </div>
-  {{media-player shouldPlay=shouldPlay songDuration=songDuration}}
+
+  {{media-player shouldPlay=shouldPlay currentTime=currentTime}}
 </div>
 

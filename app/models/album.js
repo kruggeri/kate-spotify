@@ -5,5 +5,5 @@ export default Model.extend({
   name: attr(),
   artists: attr(),
   images: attr(),
-  tracks: attr()
+  tracks: attr(),
 });
