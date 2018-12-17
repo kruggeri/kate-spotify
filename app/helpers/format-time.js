@@ -1,3 +1,5 @@
+import { helper } from '@ember/component/helper';
+
 export function formattedHours(time) {
   if (time >= 10) {
     return `${time}:`
@@ -26,7 +28,7 @@ export function formattedSeconds(time) {
   }
 }
 
-export function formattedTime(time) {
+export function formatTime(time) {
   let hours = formattedHours(Math.round(time / 3600));
   let timeLeft = time % 3600;
 
@@ -37,3 +39,5 @@ export function formattedTime(time) {
 
   return `${hours}${minutes}${seconds}`
 }
+
+export default helper(formatTime);

@@ -1,15 +1,10 @@
 import Component from '@ember/component';
-import { get, computed } from '@ember/object';
-import { formattedTime } from '../lib/format-time';
+import { get } from '@ember/object';
 
 export default Component.extend({
   tagName: 'div',
   shouldPlay: null,
   currentTime: null,
-
-  formattedCurrentTime: computed('currentTime', function () {
-    return formattedTime(this.currentTime);
-  }),
 
   actions: {
     togglePlay() {
