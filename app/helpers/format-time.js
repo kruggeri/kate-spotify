@@ -1,31 +1,26 @@
 import { helper } from '@ember/component/helper';
 
 export function formattedHours(time) {
-  if (time >= 10) {
-    return `${time}:`
-  } else if (time >= 1) {
-    return `0${time}:`;
+  if (time > 0) {
+    const hours = time.toString()
+    return `${hours.padStart(2, '0')}:`;
   } else {
-    return '';
+    return ''
   }
 }
 
 export function formattedMinutes(time) {
-  if (time < 1) {
-    return '0:'
-  } else if (time < 10) {
-    return `0${time}:`
+  if (time > 0) {
+    const minutes = time.toString();
+    return `${minutes.padStart(2, '0')}:`;
   } else {
-    return `${time}:`
+    return '0:'
   }
 }
 
 export function formattedSeconds(time) {
-  if (time > 9) {
-    return `${time}`;
-  } else {
-    return `0${time}`
-  }
+  const seconds = time.toString();
+  return `${seconds.padStart(2, '0')}`;
 }
 
 export function formatTime(time) {
