@@ -1,17 +1,9 @@
 import Component from '@ember/component';
-import { observer } from '@ember/object';
 
 export default Component.extend({
   tagName: 'audio',
   audioSource: 'http://www.kozco.com/tech/organfinale.mp3',
   attributeBindings: ['controls'],
-  songEnded: null,
-
-  songEndedUpdated: observer('songEnded', function() {
-    if (this.songEnded) {
-      this.set('shouldPlay', false);
-    }
-  }),
 
   togglePlay() {
     if (this.get('shouldPlay') === null) {
@@ -23,20 +15,18 @@ export default Component.extend({
     }
   },
 
-  completeSong() {
-    if (this.songEnded) {
-      this.togglePlay();
-    }
-  },
-
   didReceiveAttrs() {
     this.togglePlay();
   },
 
   didInsertElement() {
     this.element.onended = () => {
-      this.set('songEnded', true);
+      this.set('shouldPlay', false);
     };
-    this.set('songDuration', this.element.duration);
+
+    this.element.ontimeupdate = () => {
+      const time = this.element.currentTime;
+      this.set('currentTime', time)
+    }
   }
 });

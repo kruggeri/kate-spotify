@@ -4,7 +4,7 @@ import { get } from '@ember/object';
 export default Component.extend({
   tagName: 'div',
   shouldPlay: null,
-  songDuration: null,
+  currentTime: null,
 
   actions: {
     togglePlay() {
