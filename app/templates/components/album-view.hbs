@@ -1,0 +1,53 @@
+<div class="flex mb-4 album-container">
+  <div class="w-1/3 album-info-container">
+    <div class="album-info-inner">
+      <div class="album-cover-art">
+        <img src={{model.images.0.url}}>
+      </div>
+
+      <div class="album-info">
+        <div class="album-title">
+          {{model.name}}
+        </div>
+        <div class="album-artist">
+          {{model.artists.0.name}}
+        </div>
+
+        <div class="album-info-clump">
+          <div class="album-total-tracks">
+            &nbsp; {{model.tracks.items.length}}
+            {{if (eq model.tracks.items.length 1) "SONG" "SONGS"}}
+          </div>
+        </div>
+        <div class="album-button-container">
+          <button class="album-button playlist-button hover:bg-blue-dark text-white font-bold py-2 px-4 rounded-full">Play</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="w-2/3 songs-list">
+    {{#each model.tracks.items as |track|}}
+    <div class="track-info">
+
+      {{!-- use service to play a track --}}
+      {{#if (eq playingTrack.currentlyPlayingTrack track)}}
+      <button {{action 'stopPlayingTrack'}}>
+        Stop Track
+      </button>
+      {{else}}
+      <button {{action 'setCurrentlyPlayingTrack' track}}>
+        Play Track
+      </button>
+      {{/if}}
+
+      <div class="track-name">
+        {{track.name}}
+      </div>
+      <div class="track-duration">
+        {{format-time track.duration_ms true}}
+      </div>
+    </div>
+    {{/each}}
+  </div>
+</div>

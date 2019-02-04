@@ -23,12 +23,19 @@ export function formattedSeconds(time) {
   return `${seconds.padStart(2, '0')}`;
 }
 
-export function formatTime(time) {
-  let hours = formattedHours(Math.round(time / 3600));
-  let timeLeft = time % 3600;
+export function formatTime([time, isMilli = false]) {
+  let timeLeft;
+  if (isMilli) {
+    timeLeft = time / 1000.0
+  } else {
+    timeLeft = time;
+  }
+  let hours = formattedHours(Math.round(timeLeft / 3600));
+  timeLeft = timeLeft % 3600;
 
   let minutes = formattedMinutes(Math.round(timeLeft / 60));
   timeLeft = timeLeft % 60;
+
 
   let seconds = formattedSeconds(Math.round(timeLeft));
 
