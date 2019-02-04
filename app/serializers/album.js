@@ -31,6 +31,7 @@ export default DS.RESTSerializer.extend({
       id,
       requestType
     );
+
     return returnedPayload;
   }
 });

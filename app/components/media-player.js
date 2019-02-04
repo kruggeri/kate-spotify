@@ -1,9 +1,15 @@
 import Component from '@ember/component';
+import { scheduleOnce } from '@ember/runloop';
+import { observer } from '@ember/object';
 
 export default Component.extend({
   tagName: 'audio',
-  audioSource: 'http://www.kozco.com/tech/organfinale.mp3',
   attributeBindings: ['controls'],
+  audioSource: null,
+
+  audioSourceChanged: observer('audioSource', function() {
+    this.element.load();
+  }),
 
   togglePlay() {
     if (this.get('shouldPlay') === null) {
@@ -11,12 +17,15 @@ export default Component.extend({
     } else if (this.get('shouldPlay')) {
       this.element.play();
     } else if (this.get('shouldPlay') === false) {
+      if (!this.element) {
+        return;
+      }
       this.element.pause();
     }
   },
 
   didReceiveAttrs() {
-    this.togglePlay();
+    scheduleOnce('afterRender', this, 'togglePlay');
   },
 
   didInsertElement() {
@@ -26,7 +35,7 @@ export default Component.extend({
 
     this.element.ontimeupdate = () => {
       const time = this.element.currentTime;
-      this.set('currentTime', time)
-    }
-  }
+      this.set('currentTime', time);
+    };
+  },
 });

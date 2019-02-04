@@ -1,9 +1,13 @@
-<div>
+<div class="now-playing-bar">
   <button {{action "togglePlay"}} class="media-player-play">
     {{#if shouldPlay}}
-      Pause!
+    <span style="font-size: 12px; color: Tomato;">
+      <i class="fas fa-pause"></i>
+    </span>
     {{else}}
-      Play!
+    <span style="font-size: 12px; color: Tomato;">
+      <i class="fas fa-play"></i>
+    </span>
     {{/if}}
   </button>
 
@@ -11,21 +15,18 @@
   {{!-- <div class="song-duration">
     Song Duration:
     {{#if songDuration}}
-      {{songDuration}}
+    {{songDuration}}
     {{else}}
-      00:00
+    00:00
     {{/if}}
   </div> --}}
 
   <div class="current-time">
-    Current Time:
     {{#if currentTime}}
-      {{format-time currentTime}}
+    {{format-time currentTime}}
     {{else}}
-      0:00
+    0:00
     {{/if}}
   </div>
-
-  {{media-player shouldPlay=shouldPlay currentTime=currentTime}}
+  {{media-player shouldPlay=shouldPlay currentTime=currentTime audioSource=audioSource}}
 </div>
-
